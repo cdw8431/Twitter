@@ -47,16 +47,16 @@ const Home = ({ userObj }) => {
           onChange={onChange}
         />
         <input type="submit" value="Tweet" />
-        <div>
-          {tweets.map((dbTweet) => (
-            <Tweet
-              key={dbTweet.id}
-              tweetObj={dbTweet}
-              isOwner={dbTweet.creatorId === userObj.uid}
-            />
-          ))}
-        </div>
       </form>
+      <div>
+        {tweets.map((dbTweet) => (
+          <Tweet
+            key={dbTweet.id}
+            tweetObj={dbTweet}
+            isOwner={dbTweet.creatorId === userObj.uid}
+          />
+        ))}
+      </div>
     </div>
   );
 };
