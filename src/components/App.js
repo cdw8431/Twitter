@@ -4,24 +4,18 @@ import { authService } from "fbase";
 
 function App() {
   const [init, setInit] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userObj, setUserObj] = useState(false);
 
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
-      if (user) {
-        setIsLoggedIn(true);
-        setUserObj(user);
-      } else {
-        setIsLoggedIn(false);
-      }
+      setUserObj(user);
       setInit(true);
     });
   }, []);
   return (
     <>
       {init ? (
-        <AppRouter isLoggedIn={isLoggedIn} userObj={userObj} />
+        <AppRouter isLoggedIn={Boolean(userObj)} userObj={userObj} />
       ) : (
         "Loading..."
       )}
