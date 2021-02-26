@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { dbService } from "fbase";
+import { v4 as uuidv4 } from "uuid";
+import { dbService, storageService } from "fbase";
 import Tweet from "components/Tweet";
 
 const Home = ({ userObj }) => {
@@ -20,14 +21,25 @@ const Home = ({ userObj }) => {
       });
   }, []);
 
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
-    dbService.collection("tweets").add({
+    let attachmentUrl = "";
+    if (attachment) {
+      const attachmentRef = storageService
+        .ref()
+        .child(`${userObj.uid}/${uuidv4()}`);
+      const response = await attachmentRef.putString(attachment, "data_url");
+      attachmentUrl = await response.ref.getDownloadURL();
+    }
+    const tweetObj = {
       text: tweet,
       createdAt: Date.now(),
       creatorId: userObj.uid,
-    });
+      attachmentUrl,
+    };
+    dbService.collection("tweets").add(tweetObj);
     setTweet("");
+    setAttachment("");
   };
 
   const onChange = (event) => {
