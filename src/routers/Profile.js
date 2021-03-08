@@ -20,7 +20,6 @@ const Profile = ({ userObj, refreshUser }) => {
       console.log(tweets.docs.map((doc) => doc.data()));
     };
     getMyTweets();
-    console.log("tset");
   }, [userObj.uid]);
 
   const onChange = (event) => {
