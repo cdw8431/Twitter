@@ -1,5 +1,6 @@
 import { authService } from "fbase";
 import React, { useState } from "react";
+import "../styles/test.scss";
 
 const AuthForm = () => {
   const [email, setEmail] = useState("");
@@ -35,6 +36,7 @@ const AuthForm = () => {
 
   return (
     <>
+      <button className="test">test button</button>
       <form onSubmit={onSubmit}>
         <input
           name="email"
