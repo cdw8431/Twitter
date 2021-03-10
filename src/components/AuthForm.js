@@ -1,6 +1,5 @@
 import { authService } from "fbase";
 import React, { useState } from "react";
-import "../styles/test.scss";
 
 const AuthForm = () => {
   const [email, setEmail] = useState("");
@@ -36,12 +35,13 @@ const AuthForm = () => {
 
   return (
     <>
-      <button className="test">test button</button>
+      <div className="error">{error}</div>
       <form onSubmit={onSubmit}>
         <input
           name="email"
           type="text"
-          placeholder="Email"
+          className="email"
+          placeholder="이메일"
           required
           value={email}
           onChange={onChange}
@@ -49,21 +49,26 @@ const AuthForm = () => {
         <input
           name="password"
           type="password"
-          placeholder="Password"
+          className="password"
+          placeholder="비밀번호"
           required
           value={password}
           onChange={onChange}
         />
         <input
           type="submit"
-          value={newAccount ? "Create Account" : "Sign In"}
+          className="submit"
+          value={newAccount ? "트위터 가입" : "로그인"}
           required
         />
+        <div className="toggleLogin">
+          <button onClick={toggleAccount}>
+            {newAccount
+              ? "계정을 이미 보유하고 있나요? · 로그인"
+              : "계정이 아직 없나요? · 트위터 가입"}
+          </button>
+        </div>
       </form>
-      <div>{error}</div>
-      <button onClick={toggleAccount}>
-        {newAccount ? "Sign In" : "Create Account"}
-      </button>
     </>
   );
 };

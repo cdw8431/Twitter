@@ -1,0 +1,95 @@
+$primary-color: #1DA1F2;
+$primary-hover-color: #1A91DA;
+$error-color: #E0245E;
+$disabled-color: #8ED0F8;
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.Auth-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logo {
+        width: 20.88rem;
+        margin-top: 1.6rem;
+        img {
+            width: 2.4rem;
+        }
+    }
+
+    .title {
+        width: 20.88rem;
+        h1 {
+            font-size: 1.817rem;
+        }
+    }
+
+    .error {
+        width: 20.88rem;
+        margin-bottom: 1rem;
+        color: $error-color;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        input {
+            margin-bottom: 1.5rem;
+        }
+
+        .email, .password {
+            border: 0.067rem solid #D2DBE0;
+            padding: 0.6rem 0.4rem;
+            font-size: 1.125rem;
+            outline: none;
+            border-radius: 0.25rem;
+            width: 20rem;
+            height: 2.5rem;
+        }
+
+        .submit {
+            cursor: pointer;
+            background-color: $primary-color;
+            color: #ffffff;
+            font-size: 0.938rem;
+            outline: none;
+            border: none;
+            border-radius: 2rem;
+            width: 20.88rem;
+            height: 3.000rem;
+            transition-duration: 0.15s;
+            &:hover {
+                background-color: $primary-hover-color;
+            }
+        }
+    }
+
+    .toggleLogin {
+        margin-left: auto;
+        margin-right: auto;
+        button {
+            border: none;
+            background: none;
+            outline: none;
+            font-size: 0.875rem;
+            color: #37A2E3;
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .anotherLoginWay {
+        margin-top: 1rem;
+    }
+}

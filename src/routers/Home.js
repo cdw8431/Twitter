@@ -21,16 +21,19 @@ const Home = ({ userObj }) => {
   }, []);
 
   return (
-    <div>
-      <TweetFactory userObj={userObj} />
-      {tweets.map((dbTweet) => (
-        <Tweet
-          key={dbTweet.id}
-          tweetObj={dbTweet}
-          isOwner={dbTweet.creatorId === userObj.uid}
-        />
-      ))}
-    </div>
+    <>
+      <div>
+        <TweetFactory userObj={userObj} />
+        {tweets.map((dbTweet) => (
+          <Tweet
+            key={dbTweet.id}
+            tweetObj={dbTweet}
+            isOwner={dbTweet.creatorId === userObj.uid}
+          />
+        ))}
+      </div>
+      <footer>&copy; {new Date().getFullYear()} Twitter</footer>
+    </>
   );
 };
 

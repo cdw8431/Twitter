@@ -1,6 +1,8 @@
 import React from "react";
 import { authService, firebaseInstance } from "fbase";
-import AuthForm from "routers/AuthForm";
+import AuthForm from "components/AuthForm";
+import "styles/Auth.scss";
+import logo from "styles/images/twitter_logo.png";
 
 const Auth = () => {
   const onSocialClick = async (event) => {
@@ -18,14 +20,22 @@ const Auth = () => {
 
   return (
     <>
-      <AuthForm />
-      <div>
-        <button name="google" onClick={onSocialClick}>
-          Continue with Google
-        </button>
-        <button name="github" onClick={onSocialClick}>
-          Continue with Github
-        </button>
+      <div className="Auth-container">
+        <div className="logo">
+          <img src={logo} alt="logo" />
+        </div>
+        <div className="title">
+          <h1>트위터 로그인</h1>
+        </div>
+        <AuthForm />
+        <div className="anotherLoginWay">
+          <button name="google" onClick={onSocialClick}>
+            Continue with Google
+          </button>
+          <button name="github" onClick={onSocialClick}>
+            Continue with Github
+          </button>
+        </div>
       </div>
     </>
   );
