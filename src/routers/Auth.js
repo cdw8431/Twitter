@@ -2,7 +2,7 @@ import React from "react";
 import { authService, firebaseInstance } from "fbase";
 import AuthForm from "components/AuthForm";
 import "styles/Auth.scss";
-import logo from "styles/images/twitter_logo.png";
+import logo from "styles/images/twitter_logo.svg";
 
 const Auth = () => {
   const onSocialClick = async (event) => {
@@ -28,7 +28,7 @@ const Auth = () => {
           <h1>트위터 로그인</h1>
         </div>
         <AuthForm />
-        <div className="anotherLoginWay">
+        <div className="sns_login">
           <button name="google" onClick={onSocialClick}>
             Continue with Google
           </button>

@@ -1,0 +1,16 @@
+@import './Common.scss';
+
+.Navigation-container {
+    height: 8vh;
+    ul {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .Navigation-link {
+            @include sec-button-init();
+            font-size: 	1.3rem;
+            padding: 0.5rem 0.7rem;
+        }
+    }
+}

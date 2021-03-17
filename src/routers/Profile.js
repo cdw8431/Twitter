@@ -48,9 +48,11 @@ const Profile = ({ userObj, refreshUser }) => {
           value={newDisplayName}
           onChange={onChange}
         />
-        <input type="submit" value="Update Profile" />
+        <input type="submit" value="프로필 설정하기" />
       </form>
-      <button onClick={onLogOutClick}>Log Out</button>
+      <button onClick={onLogOutClick}>
+        {userObj.displayName}님 계정에서 로그아웃
+      </button>
     </>
   );
 };

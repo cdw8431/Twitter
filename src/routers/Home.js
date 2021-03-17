@@ -22,7 +22,7 @@ const Home = ({ userObj }) => {
 
   return (
     <>
-      <div>
+      <div className="Home-container">
         <TweetFactory userObj={userObj} />
         {tweets.map((dbTweet) => (
           <Tweet

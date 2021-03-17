@@ -1,0 +1,25 @@
+@import "./Common.scss";
+
+.Home-container {
+    height: 100%;
+}
+
+.TweetFactory-container {
+    height: 20%;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    input[type=text] {
+        border: none;
+        outline: none;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+    input[type=submit] {
+        @include primary-button-init();
+        align-self: flex-end;
+        font-size: 1rem;
+        padding: 0.6rem 1.0rem;
+    }
+}

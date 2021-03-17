@@ -39,7 +39,7 @@ const Tweet = ({ tweetObj, isOwner }) => {
           <form onSubmit={onSubmit}>
             <input
               type="text"
-              placeholder="Edit your tweet"
+              placeholder="트윗 수정하기"
               value={newTweet}
               onChange={onChange}
             />
@@ -60,8 +60,8 @@ const Tweet = ({ tweetObj, isOwner }) => {
           )}
           {isOwner && (
             <>
-              <button onClick={onDeleteClick}>Delete Tweet</button>
-              <button onClick={toggleEditing}>Edit Tweet</button>
+              <button onClick={onDeleteClick}>삭제</button>
+              <button onClick={toggleEditing}>수정</button>
             </>
           )}
         </>

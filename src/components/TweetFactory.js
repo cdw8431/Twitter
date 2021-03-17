@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { dbService, storageService } from "fbase";
+import "styles/Tweet.scss";
 
 const TweetFactory = ({ userObj }) => {
   const [tweet, setTweet] = useState("");
@@ -53,22 +54,22 @@ const TweetFactory = ({ userObj }) => {
 
   return (
     <>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="TweetFactory-container">
         <input
           type="text"
-          placeholder="What's happening?"
+          placeholder="무슨 일이 일어나고 있나요?"
           maxLength={120}
           value={tweet}
           onChange={onChange}
         />
         <input type="file" accept="image/*" onChange={onFileChange} />
-        <input type="submit" value="Tweet" />
         {attachment && (
           <div>
             <img src={attachment} width="50px" height="50px" alt="profile" />
-            <button onClick={onClearAttatchment}>Clear</button>
+            <button onClick={onClearAttatchment}>삭제</button>
           </div>
         )}
+        <input type="submit" value="트윗" />
       </form>
     </>
   );

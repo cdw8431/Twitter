@@ -61,7 +61,7 @@ const AuthForm = () => {
           value={newAccount ? "트위터 가입" : "로그인"}
           required
         />
-        <div className="toggleLogin">
+        <div className="toggle_login">
           <button onClick={toggleAccount}>
             {newAccount
               ? "계정을 이미 보유하고 있나요? · 로그인"
