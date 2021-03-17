@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    
     .logo {
         width: 20.88rem;
         margin-top: 1.6rem;
@@ -13,14 +13,12 @@
             width: 5.375rem;
         }
     }
-
     .title {
         width: 20.88rem;
         h1 {
             font-size: 2rem;
         }
     }
-
     .error {
         width: 20.88rem;
         margin-bottom: 1rem;
@@ -31,11 +29,9 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-
         input {
             margin-bottom: 1.5rem;
         }
-
         .email, .password {
             border: 0.067rem solid $border-color;
             padding: 0.6rem 0.4rem;
@@ -45,7 +41,6 @@
             width: 20rem;
             height: 2.2rem;
         }
-
         .submit {
             cursor: pointer;
             background-color: $primary-color;
@@ -62,7 +57,7 @@
             }
         }
     }
-
+    
     .toggle_login {
         margin-left: auto;
         margin-right: auto;
