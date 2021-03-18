@@ -8,7 +8,7 @@
         flex-direction: row;
         align-items: center;
         .Navigation-link {
-            @include sec-button-init();
+            @include button-custom(white, black, $sec-button-hover-color, $primary-color);
             font-size: 	1.3rem;
             padding: 0.5rem 0.7rem;
         }

@@ -69,7 +69,11 @@ const TweetFactory = ({ userObj }) => {
             <button onClick={onClearAttatchment}>삭제</button>
           </div>
         )}
-        <input type="submit" value="트윗" />
+        <input
+          type="submit"
+          disabled={tweet ? false : "disabled"}
+          value="트윗"
+        />
       </form>
     </>
   );

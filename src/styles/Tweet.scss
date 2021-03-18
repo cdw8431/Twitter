@@ -17,9 +17,18 @@
         font-weight: bold;
     }
     input[type=submit] {
-        @include primary-button-init();
         align-self: flex-end;
         font-size: 1rem;
         padding: 0.6rem 1.0rem;
+        @include button-custom($primary-button-color, white, $primary-hover-color, white);
+    }
+
+    input[type=submit]:disabled {
+        cursor: context-menu;
+        opacity: 0.6;
+        box-shadow: none;
+        &:hover {
+            background-color: $primary-button-color;
+        }
     }
 }

@@ -1,8 +1,8 @@
 $primary-color: #1DA1F2;
+$primary-button-color: #37A2E3;
 $primary-hover-color: #1A91DA;
-$border-color: #D2DBE0;
-$prime-button-color: #37A2E3;
 $sec-button-hover-color: #E8F5FE;
+$border-color: #D2DBE0;
 $error-color: #E0245E;
 
 html, body {
@@ -17,7 +17,6 @@ html, body {
 
 #root {
     width: 30%;
-    padding: 0px 50;
     height: 100%;
 }
 
@@ -35,31 +34,20 @@ ul {
     text-decoration: none;
 }
 
-@mixin primary-button-init($radius: 2rem, $weight: bold, $color: white) {
+@mixin button-custom($back_color, $font-color, $back-hover-color, $font-hover-color, $radius: 2rem, $weight: bold) {
     @include button-init();
-    color: $color;
-    background: $prime-button-color;
-    font-weight: $weight;
-    border-radius: $radius;
-    &:hover {
-        @include button-hover();
-    }
-}
-
-@mixin sec-button-init($radius: 2rem, $weight: bold, $color: black) {
-    @include button-init();
-    color: $color;
-    background: none;
-    font-weight: $weight;
-    border-radius: $radius;
-    &:hover {
-        @include button-hover($primary-hover-color, $sec-button-hover-color)
-    }
-}
-
-@mixin button-hover($font-color: white, $back-color: $primary-hover-color, $time: 0.15s) {
     color: $font-color;
-    background-color: $back-color;
+    background-color: $back_color;
+    font-weight: $weight;
+    border-radius: $radius;
+    &:hover {
+        @include button-hover($back-hover-color, $font-hover-color);
+    }
+}
+
+@mixin button-hover($back_color, $font-color, $time: 0.3s) {
+    color: $font-color;
+    background-color: $back_color;
     transition-duration: $time;
     box-shadow: rgba(0, 132, 255, 0.1) 0px 0.25rem 1rem;
 }
